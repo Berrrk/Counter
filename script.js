@@ -1,5 +1,16 @@
 // Hedef tarihi ayarla (örnek olarak 1 ay sonrası)
 const targetDate = new Date('2025-06-21T10:00:00');
+const tickSound = document.getElementById('tickSound');
+
+// Ses seviyesini ayarla
+tickSound.volume = 0.2; // 20% ses seviyesi
+
+function playTickSound() {
+    tickSound.currentTime = 0; // Sesi başa sar
+    tickSound.play().catch(function(error) {
+        console.log("Ses çalma hatası:", error);
+    });
+}
 
 function updateCountdown() {
     const currentDate = new Date();
@@ -15,6 +26,9 @@ function updateCountdown() {
     document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
     document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
     document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+
+    // Her saniye değişiminde ses çal
+    playTickSound();
 
     // Sayaç tamamlandığında
     if (difference < 0) {

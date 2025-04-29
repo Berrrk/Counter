@@ -14,7 +14,6 @@ body {
 
 .container {
     max-width: 1200px;
-    padding: 20% !important;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -148,29 +147,72 @@ body {
 
 /* Responsive Design */
 @media (max-width: 576px) {
+    .container {
+        padding: 10% !important;
+    }
+
+    .countdown-container {
+        padding: 15px;
+        width: 100%;
+    }
+
     .countdown-timer {
-        gap: 10px;
+        gap: 8px;
+        padding: 10px;
     }
 
     .time-section {
-        min-width: 45px;
+        min-width: auto;
     }
 
     .time {
-        font-size: 2rem;
-    }
-
-    .label {
-        font-size: 0.8rem;
-    }
-
-    .time-divider {
         font-size: 1.5rem;
     }
 
+    .label {
+        font-size: 0.6rem;
+        margin-top: 3px;
+    }
+
+    .time-divider {
+        font-size: 1.2rem;
+        margin-top: -5px;
+        padding: 0 2px;
+    }
+
     .pixel-title {
-        font-size: 2rem;
-        letter-spacing: 2px;
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* Daha küçük telefonlar için ek düzenlemeler */
+@media (max-width: 360px) {
+    .container {
+        padding: 5% !important;
+    }
+
+    .countdown-timer {
+        gap: 5px;
+    }
+
+    .time {
+        font-size: 1.2rem;
+    }
+
+    .label {
+        font-size: 0.5rem;
+    }
+
+    .time-divider {
+        font-size: 1rem;
+        padding: 0 1px;
+    }
+
+    .pixel-title {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
     }
 }
 
